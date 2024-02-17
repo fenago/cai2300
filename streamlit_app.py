@@ -11,15 +11,20 @@ def load_model():
 # Load the pickled model using the cached function
 model = load_model()
 
+# Setting up the sidebar
+st.sidebar.title("Options")
+st.sidebar.info("This NLP app uses a pre-trained model to predict sentiment. Enter some text and click 'Predict Sentiment'.")
+
+# Main application
 st.title('NLP Sentiment Analysis')
 
-# User input
-user_input = st.text_area("Enter Text", "")
+# User input in sidebar
+user_input = st.sidebar.text_area("Enter Text for Analysis", "")
 
-# Predict and display the result
-if st.button('Predict Sentiment'):
+# Main area for display output
+if st.sidebar.button('Predict Sentiment'):
     prediction = model.predict([user_input])[0]
     if prediction == 1:
-        st.write('Positive Sentiment')
+        st.success('Positive Sentiment')
     else:
-        st.write('Negative Sentiment')
+        st.error('Negative Sentiment')
