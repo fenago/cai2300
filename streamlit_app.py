@@ -6,6 +6,7 @@ with open('nlp.pkl', 'rb') as file:
     model = pickle.load(file)
 
 st.title('NLP Sentiment Analysis')
+st.image('https://www.mdc.edu/kendall/img/campus_building_r.jpg')
 
 # User input
 user_input = st.text_area("Enter Text", "")
