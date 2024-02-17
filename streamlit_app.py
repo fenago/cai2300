@@ -17,3 +17,6 @@ if st.button('Predict Sentiment'):
         st.write('Positive Sentiment')
     else:
         st.write('Negative Sentiment')
+
+
+st.code("for i in range(8): foo()")
